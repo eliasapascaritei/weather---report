@@ -1,10 +1,13 @@
 # weather---report
+playing with scala.js
+
 
 gettign weather report from google maps api
 
 
 
-sbt run  ---- it's simple as that
+
+sbt run  ---- it's simple as that----
 open localhost on port 9000
 
 
