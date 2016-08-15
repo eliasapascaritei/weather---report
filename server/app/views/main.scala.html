@@ -1,0 +1,17 @@
+
+@(title: String, content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("font-awesome-4.6.3/css/font-awesome.min.css")">
+    </head>
+    <body>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        @content
+        @playscalajs.html.scripts("client")
+    </body>
+</html>
