@@ -62,6 +62,7 @@ class WeatherReport extends DataGenerator {
     jQuery("#sunset").empty()
     jQuery("#geocoords").empty()
     jQuery("#temp").empty()
+    jQuery("#alt").empty()
   }
 
   private def populateWeatherReprt(data: String) = {
@@ -77,6 +78,7 @@ class WeatherReport extends DataGenerator {
     jQuery("#sunrise").append(getTime(result.sys.sunrise.toString.toLong))
     jQuery("#sunset").append(getTime(result.sys.sunset.toString.toLong))
     jQuery("#geocoords").append("long:  " + result.coord.lon + "<br>lat:      " + result.coord.lat)
+    jQuery("#alt").append(result.main.sea_level)
     initialize(result.coord.lat.toString.toDouble, result.coord.lon.toString.toDouble)
   }
 }
@@ -157,6 +159,10 @@ class WeatherFrag[Builder, Output <: FragT, FragT](val bundle: scalatags.generic
                 tr(
                   td(ReportStyles.td, "Coordonate GPS"),
                   td(id := "geocoords")
+                ),
+                tr(
+                  td(ReportStyles.td, "Altitudine"),
+                  td(id := "alt")
                 )
               )
             )
