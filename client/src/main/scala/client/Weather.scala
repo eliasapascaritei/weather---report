@@ -69,15 +69,15 @@ class WeatherReport extends DataGenerator {
     val result = JSON.parse(data)
     val weather = result.weather.asInstanceOf[Array[js.Dynamic]](0)
     jQuery("#tempDetail").attr("style", "display:block;")
-    jQuery("#cityName").append(result.name + "," + result.sys.country)
-    val image = "http://openweathermap.org/img/w/" + weather.icon + ".png"
-    jQuery("#temp").append("<img src=" + image + " >" + Math.floor(result.main.temp.toString.toDouble - 273.15))
-    jQuery("#weather").append("" + weather.main)
-    jQuery("#pressure").append("" + result.main.pressure + " hpa")
-    jQuery("#humidity").append(result.main.humidity + " %")
+    jQuery("#cityName").append(s"${result.name}, ${result.sys.country}")
+    val image = s"http://openweathermap.org/img/w/${weather.icon}.png"
+    jQuery("#temp").append(s"<img src=$image>${Math.floor(result.main.temp.toString.toDouble - 273.15)}")
+    jQuery("#weather").append(s"${weather.main}")
+    jQuery("#pressure").append(s"${result.main.pressure} hpa")
+    jQuery("#humidity").append(s"${result.main.humidity} %")
     jQuery("#sunrise").append(getTime(result.sys.sunrise.toString.toLong))
     jQuery("#sunset").append(getTime(result.sys.sunset.toString.toLong))
-    jQuery("#geocoords").append("long:  " + result.coord.lon + "<br>lat:      " + result.coord.lat)
+    jQuery("#geocoords").append(s"long:  ${result.coord.lon}<br>lat:       ${result.coord.lat}")
     jQuery("#alt").append(result.main.sea_level)
     initialize(result.coord.lat.toString.toDouble, result.coord.lon.toString.toDouble)
   }
