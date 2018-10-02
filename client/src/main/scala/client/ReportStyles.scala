@@ -10,7 +10,7 @@ object ReportStyles extends StyleSheet.Inline {
   val mainDiv = style(
     addClassName("col-md-"),
     borderBottom := "1px solid #eee",
-    backgroundColor(Color("cyan"))
+    backgroundColor(Color("#4299F0"))
   )
 
   val searchIcon = style(
