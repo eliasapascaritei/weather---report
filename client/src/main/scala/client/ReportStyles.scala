@@ -1,5 +1,6 @@
 package client
 
+import javax.swing.BorderFactory
 import scalacss.Defaults._
 
 object ReportStyles extends StyleSheet.Inline {
@@ -51,7 +52,7 @@ object ReportStyles extends StyleSheet.Inline {
   val search = style(
     width(60 %%),
     height(35 px),
-    margin := "0% 0px 0px 16%",
+    margin(0 % 0 % 0 % 16 %%),
     borderRadius(20 px),
     paddingLeft(5 px)
   )
@@ -59,7 +60,7 @@ object ReportStyles extends StyleSheet.Inline {
   val bootstrapButton = style(
     addClassName("btn btn-info"),
     height(35 px),
-    margin := "-1px 0px 0px 0%",
+    marginTop(-1 px),
     borderRadius(10 px)
   )
 
@@ -81,7 +82,7 @@ object ReportStyles extends StyleSheet.Inline {
 
   val city = style(
     fontSize(28 px),
-    color := "#67890a",
+    color(Color("#67890a")),
     fontWeight.bold
   )
 
